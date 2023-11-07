@@ -1,0 +1,18 @@
+{% extends 'main./base.html' %}
+{% block title %}
+Комментарий
+{% endblock %}
+
+{% block content %}
+<!--!!!!!!!!!!!!!!-->
+<p class="fs-1 ms-5">
+    Создать Комментарий
+</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.name }}<br>
+    {{ form.description }}<br>
+    <button type="submit" class="bg-primary ms-100 text-white rounded" style="margin-left: 45px; border: none; height: 50px;">Добавить Комментарий</button>
+    <span>{{ error }}</span>
+</form>
+{% endblock %}
